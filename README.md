@@ -1,86 +1,206 @@
-# PharmaGuard - Pharmacogenomic Risk Prediction System
+🧬 Biocyberx
+> AI-Powered Pharmacogenomics Intelligence Platform  
+> Transforming raw genomic data into clinically actionable drug recommendations.
 
-**PharmaGuard** is a robust, production-ready pharmacogenomic (PGx) analysis engine designed to strictly adhere to **CPIC (Clinical Pharmacogenetics Implementation Consortium)** guidelines. 
+🌐 Live Links
+🔗 Live Demo:https://pharma-guard-nu.vercel.app  
+📂 GitHub Repository: https://github.com/Lalith-mourya/PharmaGuard  
+🎥 LinkedIn Demo Video:  
+https://www.linkedin.com/posts/thalladi-monisha-862359293_riftxpwioi-hackathon-24hourchallenge-activity-7430438378124300305-ukML  
 
-It predicts drug-gene interactions and associated risks based on patient genetic data (VCF files) using clinically deterministic logic. An LLM layer is used *only* for generating human-readable explanations, ensuring risk assessment reliability.
+📖 Project Overview
+Biocyberx is a full-stack pharmacogenomics web application that analyzes VCF (Variant Call Format) files and translates genetic variants into:
+- ✅ Diplotypes  
+- ✅ Activity Scores  
+- ✅ CPIC-based Phenotypes  
+- ✅ Clinical Drug Recommendations  
+The platform bridges genomics and clinical decision-making by converting complex genetic data into clear, actionable insights for precision medicine.
 
-## Features
+🏗 Architecture Overview
+Biocyberx follows a modern serverless full-stack architecture deployed on cloud infrastructure.
+1️⃣ Frontend (Client Layer)
+- Built using Next.js and React
+- Handles:
+  - VCF file uploads
+  - API requests
+  - Result visualization
+- Responsive and interactive UI
+2️⃣ Backend (Application Layer)
+- Serverless API routes
+- Parses uploaded VCF files
+- Extracts:
+  - rsIDs
+  - Genotypes
+  - Gene mappings
+- Computes:
+  - Diplotype
+  - Activity Score
+  - Phenotype
+3️⃣ Pharmacogenomics Engine
+- Maps allele combinations using CPIC guidelines
+- Calculates functional activity score
+- Determines metabolizer phenotype
+- Generates structured JSON response
+4️⃣ Deployment Layer
+- Hosted on Vercel
+- GitHub integrated CI/CD
+- Serverless function execution
+- HTTPS secured
 
-- **Strict Clinical Logic**: Rule-based phenotype prediction and risk assessment for 6 critical genes:
-  - CYP2D6, CYP2C19, CYP2C9, SLCO1B1, TPMT, DPYD
-- **Drugs Covered**: Codeine, Clopidogrel, Warfarin, Simvastatin, Azathioprine, Fluorouracil.
-- **VCF Parsing**: Extracts STAR alleles directly from annotated INFO fields.
-- **Deterministic Output**: Risk labels (Safe, Adjust Dosage, etc.) are calculated via code, not AI.
-- **AI Explanations**: Uses OpenAI/Gemini to explain *why* a risk exists (biological mechanism).
-- **API**: FastAPI backend with strict JSON output schema.
+🛠 Tech Stack
+🎨 Frontend
+- Next.js
+- React
+- Tailwind CSS
+- Framer Motion
+ 🧠 Backend
+- Node.js
+- Serverless API Routes
+- Custom Pharmacogenomics Logic Engine
+🧬 Data Standards
+- VCF v4.2 format
+- CPIC Guidelines
+- GRCh38 Reference Genome
+ 🚀 Deployment
+- Vercel (Serverless Hosting)
+- GitHub Auto Deployment
 
-## Architecture
+⚙ Installation Instructions
+📌 Prerequisites
+- Node.js (v18+ recommended)
+- npm or yarn
+- Git
 
-- **Backend**: Python 3.10+, FastAPI
-- **Logic**: Custom CPIC interpretation engine (`backend/core/cpic_logic.py`)
-- **Parsing**: `pysam` for VCF processing
-- **Validation**: Pydantic models for strict outputs
+🔽 Clone the Repository
+bash
+git clone https://github.com/Lalith-mourya/PharmaGuard.git
+cd PharmaGuard📦 Install Dependencies
+bash
+npm install
 
-## Installation
+▶ Run Development Server
+bash
+npm run dev
+Open your browser:
+http://localhost:3000
+Production Build
+bash
+npm run build
+npm start
 
-1.  **Clone the repository**:
-    ```bash
-    git clone <repo-url>
-    cd PharmaGuard
-    ```
+🔌 API Documentation
+ 📂 Base Path
+/api
 
-2.  **Create Virtual Environment**:
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # Windows: venv\Scripts\activate
-    ```
+1️⃣ Analyze VCF File
+Endpoint
+POST /api/analyze
+Request Type
+`multipart/form-data`
+ Parameters
+| Field | Type | Description          |
+| ----- | ---- | -------------------- |
+| file  | .vcf | Patient genomic file |
 
-3.  **Install Dependencies**:
-    ```bash
-    pip install -r backend/requirements.txt
-    ```
+🔁 Processing Flow
+1. Read VCF metadata
+2. Extract rsIDs
+3. Map gene variants
+4. Determine diplotype
+5. Calculate activity score
+6. Assign phenotype
+7. Return therapy recommendation
 
-4.  **Set Environment Variables**:
-    Create a `.env` file or export:
-    ```bash
-    export OPENAI_API_KEY="sk-..."
-    # or
-    export GEMINI_API_KEY="AIza..."
-    ```
-
-## Usage
-
-Start the API server:
-
-```bash
-uvicorn backend.main:app --reload
-```
-
-### Analyze Endpoint
-
-**POST** `/analyze`
-
-- **Form Data**:
-  - `file`: Path to VCF file.
-  - `drug_name`: e.g., "Codeine"
-
-**Example Output**:
-
-```json
+✅ Sample Response
+json
 {
-  "drug": "CODEINE",
-  "risk_assessment": {
-    "risk_label": "Ineffective",
-    "severity": "moderate"
-  },
-  "pharmacogenomic_profile": {
-    "primary_gene": "CYP2D6",
-    "phenotype": "PM",
-    "diplotype": "*4/*4"
-  }
+  "gene": "CYP2C19",
+  "diplotype": "*1/*2",
+  "activity_score": 1.0,
+  "phenotype": "Intermediate Metabolizer",
+  "recommendation": "Consider alternative therapy or dose adjustment."
 }
-```
 
-## Disclaimer
+2️⃣Health Check
+GET /api/health
+Response
+json
+{
+  "status": "OK"
+}
 
-**For Research/Educational Use Only.** This tool provides predictions based on CPIC guidelines but is not a substitute for professional medical advice or clinical decision-making. Always verify results with a qualified healthcare provider.
+ 🧪 Usage Examples
+📤 Frontend Upload Example
+javascript
+const formData = new FormData();
+formData.append("file", file);
+
+fetch("/api/analyze", {
+  method: "POST",
+  body: formData,
+});
+
+🖥 cURL Example
+bash
+curl -X POST http://localhost:3000/api/analyze \
+  -F "file=@sample.vcf"
+
+🧬 Interpretation Example
+If VCF contains:
+rs4244285   AG
+System computes:
+* Diplotype → *1/*2
+* Activity Score → 1.0
+* Phenotype → Intermediate Metabolizer
+* Drug Recommendation → Adjust therapy
+
+🧠 Core Functional Concepts
+🔹 Diplotype
+Combination of two star alleles inherited from parents.
+Example: *1/*2
+🔹 Activity Score
+Numeric functional value assigned to alleles.
+Example:
+* *1 = 1
+* *2 = 0
+  Total = 1 → Reduced metabolism
+🔹 Phenotype
+Clinical metabolizer classification:
+* Poor Metabolizer
+* Intermediate Metabolizer
+* Normal Metabolizer
+* Rapid Metabolizer
+* Ultra-rapid Metabolizer
+
+🚀 Deployment
+Biocyberx is deployed using:
+* Vercel (Serverless Infrastructure)
+* Automatic CI/CD from GitHub
+* Secure HTTPS
+Live Application:
+[https://pharma-guard-nu.vercel.app](https://pharma-guard-nu.vercel.app)
+
+👥 Team Members
+* Nisha Meela
+* Monisha T
+* Lalith Mourya
+* Shaik Maqil Adnan
+
+🌟 Key Features
+✔ Upload and analyze VCF files
+✔ Automated pharmacogenomic interpretation
+✔ CPIC-based phenotype mapping
+✔ Activity score calculation
+✔ Clinical therapy recommendations
+✔ Serverless scalable architecture
+✔ Modern responsive UI
+ 
+🔮 Future Enhancements
+* Multi-gene panel expansion
+* Drug interaction dashboard
+* Downloadable PDF clinical report
+* Integration with hospital EMR systems
+* AI-powered genomic risk analysis
+
+🏁 Conclusion
+Biocyberx transforms raw genomic variation data into clinical-grade pharmacogenomic intelligence, enabling safer and more personalized drug prescriptions.
