@@ -1,6 +1,6 @@
 export const analyzeData = async (formData: FormData) => {
-    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000';
-    const response = await fetch(`${backendUrl}/api/analyze`, {
+        const backendUrl = 'https://pharmaguard-2e74.onrender.com';    
+        const response = await fetch(`${backendUrl}/api/analyze`, {
         method: 'POST',
         body: formData,
     });
