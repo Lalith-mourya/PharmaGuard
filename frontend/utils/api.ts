@@ -1,5 +1,6 @@
 export const analyzeData = async (formData: FormData) => {
-    const response = await fetch('/api/analyze', {
+    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000';
+    const response = await fetch(`${backendUrl}/api/analyze`, {
         method: 'POST',
         body: formData,
     });
