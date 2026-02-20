@@ -70,7 +70,6 @@ Serverless API routes that:
 4. Deployment Layer
 
 * Hosted on Vercel
-* GitHub-integrated CI/CD
 * Serverless function execution
 * HTTPS secured
 
@@ -100,7 +99,7 @@ Data Standards:
 Deployment:
 
 * Vercel
-* GitHub Auto Deployment
+* Render
 
 ---
 
