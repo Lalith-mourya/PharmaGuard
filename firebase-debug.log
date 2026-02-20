@@ -1,0 +1,129 @@
+[debug] [2026-02-20T02:01:20.246Z] ----------------------------------------------------------------------
+[debug] [2026-02-20T02:01:20.247Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\lalit\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting --debug
+[debug] [2026-02-20T02:01:20.248Z] CLI Version:   15.7.0
+[debug] [2026-02-20T02:01:20.248Z] Platform:      win32
+[debug] [2026-02-20T02:01:20.248Z] Node Version:  v24.13.1
+[debug] [2026-02-20T02:01:20.248Z] Time:          Fri Feb 20 2026 07:31:20 GMT+0530 (India Standard Time)
+[debug] [2026-02-20T02:01:20.248Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-02-20T02:01:21.222Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-02-20T02:01:21.222Z] > authorizing via signed-in user (kopparamlalithmourya@gmail.com)
+[debug] [2026-02-20T02:01:21.223Z] [iam] checking project biocyberx-7adc4 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-02-20T02:01:21.224Z] Checked if tokens are valid: true, expires at: 1771555598937
+[debug] [2026-02-20T02:01:21.224Z] Checked if tokens are valid: true, expires at: 1771555598937
+[debug] [2026-02-20T02:01:21.225Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/biocyberx-7adc4:testIamPermissions [none]
+[debug] [2026-02-20T02:01:21.225Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/biocyberx-7adc4:testIamPermissions  x-goog-user-project=biocyberx-7adc4
+[debug] [2026-02-20T02:01:21.225Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/biocyberx-7adc4:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-02-20T02:01:25.575Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/biocyberx-7adc4:testIamPermissions 200
+[debug] [2026-02-20T02:01:25.575Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/biocyberx-7adc4:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-02-20T02:01:25.575Z] Checked if tokens are valid: true, expires at: 1771555598937
+[debug] [2026-02-20T02:01:25.575Z] Checked if tokens are valid: true, expires at: 1771555598937
+[debug] [2026-02-20T02:01:25.576Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/biocyberx-7adc4 [none]
+[debug] [2026-02-20T02:01:26.999Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/biocyberx-7adc4 200
+[debug] [2026-02-20T02:01:26.999Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/biocyberx-7adc4 {"projectId":"biocyberx-7adc4","projectNumber":"73094579832","displayName":"BIOCYBERX","name":"projects/biocyberx-7adc4","resources":{"hostingSite":"biocyberx-7adc4"},"state":"ACTIVE","etag":"1_71853b1f-fcbe-49b4-a061-6d9e18bc3dcd"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 15.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2026-02-20T02:01:31.414Z] Checked if tokens are valid: true, expires at: 1771555598937
+[debug] [2026-02-20T02:01:31.414Z] Checked if tokens are valid: true, expires at: 1771555598937
+[debug] [2026-02-20T02:01:31.414Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/biocyberx-7adc4/sites/biocyberx-7adc4 [none]
+[debug] [2026-02-20T02:01:33.870Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/biocyberx-7adc4/sites/biocyberx-7adc4 200
+[debug] [2026-02-20T02:01:33.870Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/biocyberx-7adc4/sites/biocyberx-7adc4 {"name":"projects/biocyberx-7adc4/sites/biocyberx-7adc4","defaultUrl":"https://biocyberx-7adc4.web.app","type":"DEFAULT_SITE"}
+[info] ▲ Next.js 16.1.6 (Turbopack)
+
+[info] 
+
+[info]   Creating an optimized production build ...
+
+[info] 
+
+[info] [62.00ms] [@tailwindcss/postcss] app\globals.css
+[ 0.05ms]   ↳ Quick bail check
+[19.09ms]   ↳ Setup compiler
+[ 0.20ms]     ↳ PostCSS AST -> Tailwind CSS AST
+[18.88ms]     ↳ Create compiler
+[ 0.18ms]   ↳ Register full rebuild paths
+[ 1.67ms]   ↳ Setup scanner
+
+[info] [ 4.83ms]   ↳ Scan for candidates
+[ 6.24ms]   ↳ Register dependency messages
+[17.98ms]   ↳ Build utilities
+[10.34ms]   ↳ Optimization
+[ 0.83ms]     ↳ AST -> CSS
+[ 5.83ms]     ↳ Lightning CSS
+[ 3.63ms]     ↳ CSS -> PostCSS AST
+
+[info] [ 1.34ms]   ↳ Update PostCSS AST
+
+
+[info] ✓ Compiled successfully in 1588.6ms
+
+[info]   Running TypeScript ...
+
+[info]   Collecting page data using 19 workers ...
+
+[info]   Generating static pages using 19 workers (0/5) ...
+
+[info]   Generating static pages using 19 workers (1/5) 
+
+[info]   Generating static pages using 19 workers (2/5) 
+
+[info]   Generating static pages using 19 workers (3/5) 
+
+[info] ✓ Generating static pages using 19 workers (5/5) in 391.7ms
+
+[info]   Finalizing page optimization ...
+
+[info] 
+
+[info] Route (app)
+┌ ○ /
+├ ○ /_not-found
+└ ○ /dashboard
+
+
+
+[info] ○  (Static)  prerendered as static content
+
+
+[info] Building a Cloud Function to run this application. This is needed due to:
+[info]  • advanced rewrites
+[info] 
+[debug] [2026-02-20T02:01:40.997Z] Checked if tokens are valid: true, expires at: 1771555598937
+[debug] [2026-02-20T02:01:40.998Z] Checked if tokens are valid: true, expires at: 1771555598937
+[debug] [2026-02-20T02:01:40.998Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/biocyberx-7adc4/sites/biocyberx-7adc4 [none]
+[debug] [2026-02-20T02:01:58.576Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/biocyberx-7adc4/sites/biocyberx-7adc4 200
+[debug] [2026-02-20T02:01:58.577Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/biocyberx-7adc4/sites/biocyberx-7adc4 {"name":"projects/biocyberx-7adc4/sites/biocyberx-7adc4","defaultUrl":"https://biocyberx-7adc4.web.app","type":"DEFAULT_SITE"}
+[debug] [2026-02-20T02:06:12.755Z] ----------------------------------------------------------------------
+[debug] [2026-02-20T02:06:12.757Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\lalit\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting
+[debug] [2026-02-20T02:06:12.757Z] CLI Version:   15.7.0
+[debug] [2026-02-20T02:06:12.757Z] Platform:      win32
+[debug] [2026-02-20T02:06:12.757Z] Node Version:  v24.13.1
+[debug] [2026-02-20T02:06:12.757Z] Time:          Fri Feb 20 2026 07:36:12 GMT+0530 (India Standard Time)
+[debug] [2026-02-20T02:06:12.757Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-02-20T02:06:13.748Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-02-20T02:06:13.749Z] > authorizing via signed-in user (kopparamlalithmourya@gmail.com)
+[debug] [2026-02-20T02:06:13.749Z] [iam] checking project biocyberx-7adc4 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-02-20T02:06:13.750Z] Checked if tokens are valid: true, expires at: 1771555598937
+[debug] [2026-02-20T02:06:13.750Z] Checked if tokens are valid: true, expires at: 1771555598937
+[debug] [2026-02-20T02:06:13.751Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/biocyberx-7adc4:testIamPermissions [none]
+[debug] [2026-02-20T02:06:13.751Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/biocyberx-7adc4:testIamPermissions  x-goog-user-project=biocyberx-7adc4
+[debug] [2026-02-20T02:06:13.751Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/biocyberx-7adc4:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-02-20T02:06:23.837Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/biocyberx-7adc4:testIamPermissions 200
+[debug] [2026-02-20T02:06:23.837Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/biocyberx-7adc4:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-02-20T02:06:23.838Z] Checked if tokens are valid: true, expires at: 1771555598937
+[debug] [2026-02-20T02:06:23.838Z] Checked if tokens are valid: true, expires at: 1771555598937
+[debug] [2026-02-20T02:06:23.839Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/biocyberx-7adc4 [none]
+[debug] [2026-02-20T02:06:34.963Z] *** [apiv2] error from fetch(https://firebase.googleapis.com/v1beta1/projects/biocyberx-7adc4, {"headers":{},"method":"GET","signal":{"reason":""}}): FetchError: request to https://firebase.googleapis.com/v1beta1/projects/biocyberx-7adc4 failed, reason: getaddrinfo ENOTFOUND firebase.googleapis.com
+[debug] [2026-02-20T02:06:34.963Z] Failed to make request to https://firebase.googleapis.com/v1beta1/projects/biocyberx-7adc4 (original: request to https://firebase.googleapis.com/v1beta1/projects/biocyberx-7adc4 failed, reason: getaddrinfo ENOTFOUND firebase.googleapis.com)
+[error] 
+[error] Error: Assertion failed: resolving hosting target of a site with no site name or target name. This should have caused an error earlier
