@@ -1,8 +1,3 @@
-Below is your **complete README content in plain text format**.
-You can copy this directly into a `.txt` file or rename it as `README.md`.
-
----
-
 🧬 BIOCYBERX
 AI-Powered Pharmacogenomics Intelligence Platform
 Transforming raw genomic data into clinically actionable drug recommendations.
